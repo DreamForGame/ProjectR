@@ -1,0 +1,63 @@
+一：UI模块
+
+拥有的类和相关资源:
+
+主要：
+	UIManager.cs
+	UIJson.cs
+	GetUIJson.cs
+	UIType.cs
+	UIPlane.cs
+
+设置:
+	UIConfig.cs
+
+扩展:
+	DictionaryExtension.cs
+
+资源:
+	UIJson.json
+
+说明：
+
+UIManager是一个单例类，主要职责是控制所有UI窗口的创建与关闭(UIPlane)。
+UIManager拥有两个字典：一个是窗口的对象池，一个是Json里面所填写窗口的路径
+当窗口创建好后，Json字典的路径会自动清空。当窗口关闭后，窗口不会Destory
+而是会隐藏，以便下次调用。
+
+UIConfig的主要设置UI的一些相关设置，UIManager会调用它，用它部分成员进行操作。
+
+UIPlane则是所有窗口的父类，其中包含四个可改写的虚函数:
+	OnEnable(),Begin(),Pause(),OnDisable()
+
+用户可以根据需要对其进行改写。
+
+目前用户可以改写的文件有：
+	UIJson.json(存储在Resources中)
+	DictionaryExtension:目前除TryGet函数外可以进行额外增加，但TryGet为必要函数，不能删减，会在UIManager中进行调用
+	UIType:用户可以根据需求进行改写，此为对象池索引
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+二：场景管理
+
+
+拥有的类:
+
+主要：
+	ScenenStateController.cs
+	ScenenState.cs
+	ScenenRoot.cs
+
+
+
+说明：
+
+ScenenStateController主要职责是对其私有成员进行场景状态的切换，初始化，主要逻辑，退出和跳转场景等操作。
+该私有成员不会被外界获取。
+
+每一个场景的主要逻辑可以继承ScenenState进行改写。
+
+而ScenenRoot会在初始化的时候对ScenenStateController进行初始化，并设置成不会因场景跳转而被删除（日后可能会修改这个逻辑）
