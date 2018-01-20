@@ -61,3 +61,38 @@ ScenenStateControllerÖ÷ÒªÖ°ÔðÊÇ¶ÔÆäË½ÓÐ³ÉÔ±½øÐÐ³¡¾°×´Ì¬µÄÇÐ»»£¬³õÊ¼»¯£¬Ö÷ÒªÂß¼­£
 Ã¿Ò»¸ö³¡¾°µÄÖ÷ÒªÂß¼­¿ÉÒÔ¼Ì³ÐScenenState½øÐÐ¸ÄÐ´¡£
 
 ¶øScenenRoot»áÔÚ³õÊ¼»¯µÄÊ±ºò¶ÔScenenStateController½øÐÐ³õÊ¼»¯£¬²¢ÉèÖÃ³É²»»áÒò³¡¾°Ìø×ª¶ø±»É¾³ý£¨ÈÕºó¿ÉÄÜ»áÐÞ¸ÄÕâ¸öÂß¼­£©
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Èý£ºÒôÆµ¹ÜÀí
+ÓµÓÐµÄÀà£º
+	AudioBase.cs
+	AudioFSMState.cs
+	AudioPlane.cs
+	AudioSetting.cs
+	AudioSystem.cs
+	RepeatePlayAudio.cs
+	SinglePlayAudio.cs
+	AudioShadeBig.cs
+	AudioShadeSmall.cs
+	SoundEffect.cs
+	SoundEffectManager.cs
+
+ËµÃ÷£º
+AudioSystemÀàÊÇÒ»¸öµ¥ÀýÀà£¬Ëü¿ÉÒÔÍ¨¹ýSendMsg¶ÔAudioBaseÀïÃæµÄÒôÆµ»ú½øÐÐÉèÖÃ£¬Ïà¹Ø×´Ì¬ÉèÖÃ¿ÉÒÔ¿´AudioSettingÀïÃæµÄAudioState¡£
+SinglePlayAudioÖ÷Òª¹¦ÄÜÊÇ´æ·ÅÃ¿¹Ø²»Í¬µÄÉùÒô£¬¶øRepeatePlayAudio.csÔòÊÇ´æ·Å¹«¹²ÉùÒô£¬Á½Õß¼Ì³Ð×ÔAudioBase.cs
+AudioShadeSmallºÍAudioShadeBigÊÇÒôÐ§Ð§¹û£¬Ä¿Ç°Ö»ÊµÏÖÁËÖð½¥·Å´óºÍÖð½¥¼õÐ¡ÉùÒô£¬Á½Õß¼Ì³Ð×ÔSoundEffect,Ïà¹ØÒôÐ§ÀàÐÍ¿ÉÒÔ²é¿´AudioSettingÀïÃæ
+µÄAudioEffect
+
+Ê¹ÓÃ£º
+ÒÔ¹Ø¿¨ÎªÀý×Ó£ºÃ¿¸ö¹Ø¿¨ÐèÒªÖÁÉÙÒ»¸öÒôÆµÔ¤ÖÆÌå×÷ÎªÒôÆµ¶ÔÏó³Ø£¬È»ºóÊÖ¶¯¶ÔAudioSystemÀïÃæµÄSinglePlayAudio¶ÔÏó½øÐÐ³õÊ¼»¯(Ä¿Ç°Ö»ÄÜÊÖ¶¯£¬½¨ÒéÔÚloading
+½øÐÐ)£¬³õÊ¼»¯ºó»áÔÚ³¡¾°´´½¨Ò»¸öÁË¶ÔÏó³Ø¶ÔÏó¡£
+SendMsgÒ»¹²ÓµÓÐËÄ¸ö²ÎÊý£¬µÚÒ»¸ö²ÎÊýuseÊÇÓÃÀ´ÅÐ¶ÏÊÇÊ¹ÓÃÖØ¸´µÄÓïÒô»¹ÊÇ¹Ø¿¨×¨ÊôÓïÒô£¬µÚ¶þ¸ö²ÎÊýÔòÊÇÓïÒôÃû³Æ£¬Í¨¹ý¸ÃÃû³Æ´«Èëµ½SinglePlayAudio»ò
+RepeatePlayAudioÖÐÀ´ÅÐ¶Ï×ÔÉí¶ÔÏó³ØÊÇ·ñ´æÔÚ¸ÃAudioSource¶ÔÏó£¬Èç¹ûÓµÓÐ¸Ã¶ÔÏóÔòµ÷ÓÃ¸Ã¶ÔÏó£¬Èç¹ûÃ»ÓÐÔòÖØÐÂ´´½¨Ò»¸ö¶ÔÏó²¢±£´æµ½¶ÔÏó³ØÖÐ¡£
+µÚÈý¸ö²ÎÊýÊÇ×´Ì¬£¬Ëü»á¸ù¾Ý¸Ã²ÎÊý¶ø¶ÔAudioFSMStateµÄÏà¹Ø²Ù×÷º¯Êý½øÐÐÎ¯ÍÐ£¬È»ºóÖ´ÐÐ¡£
+µÚËÄ¸ö²ÎÊýÔòÊÇÒôÐ§£¬Ä¿Ç°Ö»ÓÐÕý³££¬Öð½¥·Å´óºÍÖð½¥¼õÉÙ£¬²ÎÊýÄ¬ÈÏÊÇÕý³£ÒôÐ§£¬¸Ã²ÎÊýÖ÷ÒªÓÃÓÚÅÐ¶ÏÊµÏÖÒôÐ§½áÊø»ò¸Õ¿ªÊ¼²¥·ÅÊ±µÄÐ§¹û¡£µ±ÔÚÕý³£Ä£Ê½Ê±£¬
+ÉùÒô¶ÔÏó»áÔÚ²¥·ÅÍêºó½øÐÐÏú»Ù¡£
+
